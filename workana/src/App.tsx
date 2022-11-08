@@ -8,7 +8,11 @@ import Articles from './components/Articles';
 
 const title = "Sorting Articles";
 
-function App({articles:ArticlesType[]}) {
+export type articles{
+    articles: ArticlesType[];
+}
+
+function App({articles}) {
 
     return (
         <div className="App">

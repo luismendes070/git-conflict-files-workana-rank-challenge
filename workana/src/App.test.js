@@ -1,8 +1,8 @@
-import React from 'react';
-import App from './App';
-import { render, within, fireEvent, cleanup } from '@testing-library/react';
+import React from "react";
+import App from "./App";
+import { render, within, fireEvent, cleanup } from "@testing-library/react";
 
-import '@testing-library/jest-dom/extend-expect';
+import "@testing-library/jest-dom/extend-expect";
 
 const testIds = {
   mostUpvotedLink: "most-upvoted-link",
@@ -48,6 +48,86 @@ const articles = [
   },
 ];
 
+// SORTED 1 N
+
+const sortedArticles1tillN = [
+  {
+    title: "What's SAP",
+    upvotes: 1,
+    date: "2017-01-21",
+  },
+  {
+    title: "A message to our customers",
+    upvotes: 12,
+    date: "2019-10-22",
+  },
+  {
+    title: "Alphabet earnings",
+    upvotes: 22,
+    date: "2011-11-23",
+  },
+  {
+    title: "the Emu War",
+    upvotes: 24,
+    date: "2018-04-01",
+  },
+  {
+    title: "Scaling to 100k Users",
+    upvotes: 72,
+    date: "2019-10-21",
+  },
+  {
+    title: "Simple text editor has 15k monthly users",
+    upvotes: 83,
+    date: "2020-02-22",
+  },
+  {
+    title: "Artificial Mountains",
+    upvotes: 200,
+    date: "2019-11-23",
+  },
+];
+
+// SORTED N 1
+
+const sortedArticlesNTill1 = [
+  {
+    title: "Artificial Mountains",
+    upvotes: 200,
+    date: "2019-11-23",
+  },
+  {
+    title: "Simple text editor has 15k monthly users",
+    upvotes: 83,
+    date: "2020-02-22",
+  },
+  {
+    title: "Scaling to 100k Users",
+    upvotes: 72,
+    date: "2019-10-21",
+  },
+  {
+    title: "the Emu War",
+    upvotes: 24,
+    date: "2018-04-01",
+  },
+  {
+    title: "Alphabet earnings",
+    upvotes: 22,
+    date: "2011-11-23",
+  },
+  {
+    title: "A message to our customers",
+    upvotes: 12,
+    date: "2019-10-22",
+  },
+  {
+    title: "What's SAP",
+    upvotes: 1,
+    date: "2017-01-21",
+  },
+];
+
 const mostUpvotedArticles = articles.concat().sort((a, b) => {
   if (a.upvotes > b.upvotes) {
     return -1;
@@ -72,8 +152,7 @@ const mostRecentArticles = articles.concat().sort((a, b) => {
 
 const renderApp = () => render(<App articles={articles} />);
 
-beforeEach(() => {
-});
+beforeEach(() => {});
 
 afterEach(() => {
   cleanup();
@@ -86,18 +165,32 @@ const expectArticles = (articles, expectedArticles) => {
     const upvotes = within(article).getByTestId("article-upvotes").textContent;
     const date = within(article).getByTestId("article-date").textContent;
     const expectedArticle = expectedArticles[i];
-    expect([title, upvotes, date]).toEqual([expectedArticle.title, expectedArticle.upvotes.toString(), expectedArticle.date]);
+    expect([title, upvotes, date]).toEqual([
+      expectedArticle.title,
+      expectedArticle.upvotes.toString(),
+      expectedArticle.date,
+    ]);
   });
 };
 
-test('Initial articles render correctly', () => {
+test("Initial articles render correctly", () => {
   const { getByTestId, queryAllByTestId } = renderApp();
 
   const articles = queryAllByTestId(testIds.article);
   expectArticles(articles, mostUpvotedArticles);
 });
 
-test('Clicking on top renders expected articles', () => {
+// test sorted articles 1 N
+test("test sorted articles 1 N", () => {
+  fail(true);
+});
+
+// test sorted articles n 1
+test("test sorted articles n 1", () => {
+  fail(true);
+});
+
+test("Clicking on top renders expected articles", () => {
   const { getByTestId, queryAllByTestId } = renderApp();
 
   const mostUpvotedLink = getByTestId(testIds.mostUpvotedLink);
@@ -107,7 +200,7 @@ test('Clicking on top renders expected articles', () => {
   expectArticles(articles, mostUpvotedArticles);
 });
 
-test('Clicking on newest renders expected articles', () => {
+test("Clicking on newest renders expected articles", () => {
   const { getByTestId, queryAllByTestId } = renderApp();
 
   const mostRecentLink = getByTestId(testIds.mostRecentLink);
@@ -117,18 +210,25 @@ test('Clicking on newest renders expected articles', () => {
   expectArticles(articles, mostRecentArticles);
 });
 
-
-test('Sequence of navigation clicks renders expected artices', () => {
+test("Sequence of navigation clicks renders expected artices", () => {
   const { getByTestId, queryAllByTestId } = renderApp();
 
   const mostUpvotedLink = getByTestId(testIds.mostUpvotedLink);
   const mostRecentLink = getByTestId(testIds.mostRecentLink);
 
-  const elements = [mostRecentLink, mostUpvotedLink, mostUpvotedLink, mostRecentLink, mostRecentLink, mostUpvotedLink];
+  const elements = [
+    mostRecentLink,
+    mostUpvotedLink,
+    mostUpvotedLink,
+    mostRecentLink,
+    mostRecentLink,
+    mostUpvotedLink,
+  ];
   for (const elem of elements) {
     fireEvent.click(elem);
     const articles = queryAllByTestId(testIds.article);
-    const expectedArticles = elem === mostUpvotedLink ? mostUpvotedArticles : mostRecentArticles;
+    const expectedArticles =
+      elem === mostUpvotedLink ? mostUpvotedArticles : mostRecentArticles;
     expectArticles(articles, expectedArticles);
   }
 });
