@@ -1,7 +1,8 @@
 import {Date} from 'typescript';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import createRoot from 'react-dom/client';
+// import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -53,11 +54,15 @@ const ARTICLES:ArticlesType = [
 
 let ordenado:ArticlesType[] = [];
 
-for (i in ARTICLES) {
-  ordenado.add(ARTICLES.upvotes[i])
-}
+// typescript error code 2339
+ordenado.push(ARTICLES[6]);
+ordenado.push(ARTICLES[3]);
 
-ReactDOM.render(<App articles={ordenado} />, document.getElementById('root'));
+createRoot.render(
+  document.getElementById('root'),
+  <App articles={ ordenado } />
+);
+
 registerServiceWorker();
 
 applyPolyfills().then(() => {

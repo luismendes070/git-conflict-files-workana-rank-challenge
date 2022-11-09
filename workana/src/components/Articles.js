@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Articles() {
+export type articles{
+    articles: ArticlesType[];
+}
+
+function Articles({articles}) {
 
     return (
         <div className="card w-50 mx-auto">
@@ -15,7 +19,8 @@ function Articles() {
                 <tbody>
                 <tr data-testid="article" key="article-index">
                     <td data-testid="article-title">Article 1 title</td>
-                    <td data-testid="article-upvotes">Article 1 title</td>
+                        <td data-testid="article-upvotes">Article 1 title</td>
+                        {Articles.upvotes}
                     <td data-testid="article-date">Article 1 title</td>
                 </tr>
                 </tbody>

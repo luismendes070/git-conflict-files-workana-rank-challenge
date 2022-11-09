@@ -5,6 +5,7 @@ import './App.css';
 import 'h8k-components';
 
 import Articles from './components/Articles';
+import { ArticlesType } from './index';
 
 const title = "Sorting Articles";
 
@@ -12,7 +13,7 @@ export type articles{
     articles: ArticlesType[];
 }
 
-function App({articles}) {
+export function App({articles:ArticlesType}) {
 
     return (
         <div className="App">
