@@ -4,16 +4,12 @@ import React from 'react';
 import './App.css';
 import 'h8k-components';
 
-import Articles from './components/Articles';
-import { ArticlesType } from './index';
 
 const title = "Sorting Articles";
 
-export type articles{
-    articles: ArticlesType[];
-}
 
-export function App({articles:ArticlesType}) {
+
+export function App() {
 
     return (
         <div className="App">
@@ -23,7 +19,6 @@ export function App({articles:ArticlesType}) {
                 <button data-testid="most-upvoted-link" className="small">Most Upvoted</button>
                 <button data-testid="most-recent-link" className="small">Most Recent</button>
             </div>
-            <Articles articles={articles}/>
         </div>
     );
 

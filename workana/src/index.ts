@@ -2,8 +2,19 @@ require("@babel/core").transform("code", {
   presets: ["@babel/preset-env"],
 });
 
+import { articles, Articles } from './components/Articles';
+// import { ArticlesType } from './index';
+// export type articles{
+   // articles: ArticlesType[];
+// }
+
+import {useEffect} from "react";
+
+import { server } from "./server";
+
 // ES modules
-import * as ReactDOMServer from 'react-dom/server';
+// import * as ReactDOMServer from 'react-dom/server';
+server();
 // typescript 2305
 // import {Date} from 'typescript';
 
@@ -66,10 +77,22 @@ let ordenado:ArticlesType[] = [];
 ordenado.push(ARTICLES[6]);
 ordenado.push(ARTICLES[3]);
 
-// https://www.w3schools.com/react/react_conditional_rendering.asp
-const root = ReactDOM.createRoot(document.getElementById("root"));
+// After https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html
+export function AppWithCallbackAfterRender() {
+  useEffect(() => {
+    console.log('rendered');
+  });
 
-root.render(document.getElementById("root"), <App articles={ ordenado } />);
+  return typeof <App><Articles articles={articles}/></App>
+}
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<AppWithCallbackAfterRender />);
+
+// https://www.w3schools.com/react/react_conditional_rendering.asp
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(document.getElementById("root"), <App articles={ ordenado } />);
 
 registerServiceWorker();
 
@@ -78,4 +101,4 @@ applyPolyfills().then(() => {
 })
 
 
-export default index;
+export default AppWithCallbackAfterRender;

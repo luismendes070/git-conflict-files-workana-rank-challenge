@@ -4,7 +4,7 @@ export type articles{
     articles: ArticlesType[];
 }
 
-function Articles({articles}) {
+export function Articles({articles}) {
 
     return (
         <div className="card w-50 mx-auto">
