@@ -1,6 +1,14 @@
-import {Date} from 'typescript';
+require("@babel/core").transform("code", {
+  presets: ["@babel/preset-env"],
+});
+
+// ES modules
+import * as ReactDOMServer from 'react-dom/server';
+// typescript 2305
+// import {Date} from 'typescript';
 
 import React from 'react';
+import * as ReactDOM from "react-dom/client";
 import createRoot from 'react-dom/client';
 // import ReactDOM from 'react-dom';
 import './index.css';
@@ -58,10 +66,10 @@ let ordenado:ArticlesType[] = [];
 ordenado.push(ARTICLES[6]);
 ordenado.push(ARTICLES[3]);
 
-createRoot.render(
-  document.getElementById('root'),
-  <App articles={ ordenado } />
-);
+// https://www.w3schools.com/react/react_conditional_rendering.asp
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(document.getElementById("root"), <App articles={ ordenado } />);
 
 registerServiceWorker();
 

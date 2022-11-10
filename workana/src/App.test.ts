@@ -1,3 +1,9 @@
+require("@babel/core").transform("code", {
+  presets: ["@babel/preset-env"],
+});
+
+import { ArticlesType } from "index";
+
 import React from "react";
 import App from "./App";
 import { render, within, fireEvent, cleanup } from "@testing-library/react";
@@ -158,9 +164,12 @@ afterEach(() => {
   cleanup();
 });
 
-const expectArticles = (articles, expectedArticles) => {
+const expectArticles = (
+  articles: ArticlesType,
+  expectedArticles: ArticlesType
+) => {
   expect(articles).toHaveLength(expectedArticles.length);
-  articles.forEach((article, i) => {
+  articles.forEach((article: ArticlesType, i:number) => {
     const title = within(article).getByTestId("article-title").textContent;
     const upvotes = within(article).getByTestId("article-upvotes").textContent;
     const date = within(article).getByTestId("article-date").textContent;
