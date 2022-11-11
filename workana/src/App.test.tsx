@@ -54,6 +54,8 @@ const articles = [
   },
 ];
 
+
+
 // SORTED 1 N
 
 const sortedArticles1tillN = [
@@ -191,11 +193,25 @@ test("Initial articles render correctly", () => {
 
 // test sorted articles 1 N
 test("test sorted articles 1 N", () => {
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#examples
+let joinsort = articles;
+
+joinsort = joinsort.join().sort();
+
+console.log(joinsort);
+
   fail(true);
 });
 
 // test sorted articles n 1
 test("test sorted articles n 1", () => {
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#examples
+let joinsort = articles;
+
+joinsort = joinsort.join().sort();
+
+console.log(joinsort);
+
   fail(true);
 });
 

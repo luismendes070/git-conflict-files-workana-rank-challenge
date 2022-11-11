@@ -96,6 +96,12 @@ let ordenado:ArticlesType[] = [];
 ordenado.push(ARTICLES[6]);
 ordenado.push(ARTICLES[3]);
 
+let joinsort = ARTICLES;
+
+joinsort = joinsort.join().sort();
+
+console.log(joinsort);
+
 // After https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html
 export function AppWithCallbackAfterRender() {
   useEffect(() => {
