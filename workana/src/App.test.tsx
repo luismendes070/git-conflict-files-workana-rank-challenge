@@ -2,7 +2,7 @@ require("@babel/core").transform("code", {
   presets: ["@babel/preset-env"],
 });
 
-import { ArticlesType } from "index";
+import { ArticlesType } from "./components/AppWithCallbackAfterRender";
 
 import React from "react";
 import App from "./App";
@@ -158,7 +158,7 @@ const mostRecentArticles = articles.concat().sort((a, b) => {
   return 0;
 });
 
-const renderApp = () => render(<App articles={articles} />);
+const renderApp = () => render(<App />);
 
 beforeEach(() => {});
 
