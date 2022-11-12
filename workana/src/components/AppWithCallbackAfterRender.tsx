@@ -33,6 +33,26 @@ export interface ArticlesType{
   date: Date;
 }
 
+const articlesSort = (mostUpvotes: ArticlesType, lessUpvotes: ArticlesType) => {
+  
+  if (mostUpvotes.upvotes < lessUpvotes.upvotes) {
+    return 1;
+  }
+
+  if (mostUpvotes.upvotes > lessUpvotes.upvotes) {
+    return -1;
+  }
+ else {
+    if(mostUpvotes.title > lessUpvotes.title){
+      return 1;
+    }
+    if(mostUpvotes.title < lessUpvotes.title){
+      return -1;
+    }
+  }
+
+};
+
 const ARTICLES:ArticlesType = [
   {
     title: "A message to our customers",
@@ -74,12 +94,12 @@ const ARTICLES:ArticlesType = [
 let ordenado:ArticlesType[] = [];
 
 // typescript error code 2339
-ordenado.push(ARTICLES[6]);
-ordenado.push(ARTICLES[3]);
+// ordenado.push(ARTICLES[6]);
+// ordenado.push(ARTICLES[3]);
 
-let joinsort = ARTICLES;
+let joinsort = articlesSort(ARTICLES);
 
-joinsort = joinsort.join().sort();
+// joinsort = joinsort.upvotes.sort();
 
 console.log(joinsort);
 
