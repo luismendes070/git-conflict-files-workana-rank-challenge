@@ -1,4 +1,6 @@
-import {ArticlesType} from './index.ts';
+import { ArticlesType } from "./components/AppWithCallbackAfterRender";
+
+// import { ArticlesType } from './index.ts';
 
 import React from 'react';
 import './App.css';
@@ -19,6 +21,7 @@ export function App() {
                 <button data-testid="most-upvoted-link" className="small">Most Upvoted</button>
                 <button data-testid="most-recent-link" className="small">Most Recent</button>
             </div>
+            <AppWithCallbackAfterRender />
         </div>
     );
 
