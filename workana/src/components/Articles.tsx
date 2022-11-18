@@ -1,10 +1,14 @@
 import React from 'react';
 
-export type articles{
-    articles: ArticlesType[];
+export interface ArticlesType{
+    id: number;  
+    title: string;
+    upvotes: number;
+    date: string;
 }
 
-export function Articles({articles}) {
+
+export function Articles(articles: number) {
 
     return (
         <div className="card w-50 mx-auto">
@@ -17,12 +21,21 @@ export function Articles({articles}) {
                 </tr>
                 </thead>
                 <tbody>
-                <tr data-testid="article" key="article-index">
+                
+                    <tr data-testid="article" key="article-index">
                     <td data-testid="article-title">Article 1 title</td>
                         <td data-testid="article-upvotes">Article 1 title</td>
                         {Articles.upvotes}
                     <td data-testid="article-date">Article 1 title</td>
-                </tr>
+
+                        <td data-testid="most-upvoted-link" key="most-upvoted-link-index"> most-upvoted-link </td>
+                        
+                        <td data-testid="most-recent-link" key="most-recent-link-index"> most-recent-link </td>
+                        
+                    </tr>
+
+                    
+                    
                 </tbody>
             </table>
         </div>

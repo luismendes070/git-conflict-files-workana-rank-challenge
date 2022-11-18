@@ -2,7 +2,7 @@ require("@babel/core").transform("code", {
   presets: ["@babel/preset-env"],
 });
 
-import { articles, Articles } from './Articles';
+import { Articles } from './Articles';
 // import { ArticlesType } from './index';
 // export type articles{
    // articles: ArticlesType[];
@@ -30,7 +30,7 @@ import {applyPolyfills, defineCustomElements} from 'h8k-components/loader';
 export interface ArticlesType{
   title: string;
   upvotes: number;
-  date: Date;
+  date: string;
 }
 
 const articlesSort = (mostUpvotes: ArticlesType, lessUpvotes: ArticlesType) => {
@@ -109,7 +109,7 @@ export function AppWithCallbackAfterRender() {
     console.log('rendered');
   });
 
-  return typeof <App><Articles articles={ordenado}/></App>
+  return <App><Articles articles={ordenado}/></App>
 }
 
 const container = document.getElementById('root');
