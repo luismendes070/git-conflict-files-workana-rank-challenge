@@ -1,6 +1,6 @@
 {
   "name": "sorting-articles",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.0",
@@ -12,9 +12,11 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "^5.0.1",
-    "save": "^2.3.1"
+    "save": "^2.3.1",
+    "web-vitals": "^3.1.0"
   },
   "scripts": {
+    "compile": "npx tsc",
     "start": "react-scripts --openssl-legacy-provider start && cross-env HOST=0.0.0.0 PORT=8000 ./node_modules/.bin/react-scripts start",
     "test": "jest && cross-env CI=true ./node_modules/.bin/react-scripts test --verbose --env=jsdom --testResultsProcessor ./node_modules/jest-junit",
     "pretest": "npm install",
@@ -30,11 +32,15 @@
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
     "babel-jest": "^29.3.1",
     "chai": "^4.1.2",
     "cross-env": "^7.0.2",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-react": "^7.31.10",
     "expect": "^21.2.1",
     "jest-junit": "^3.3.0",
     "react-test-renderer": "^16.2.0",

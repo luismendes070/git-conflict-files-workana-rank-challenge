@@ -9,13 +9,17 @@ import 'h8k-components';
 
 const title = "Sorting Articles";
 
-
+const UpperCase = React.createElement(
+    '<h8k-navbar header={title}></h8k-navbar>'
+);
 
 export function App() {
 
     return (
         <div className="App">
-            <h8k-navbar header={title}></h8k-navbar>
+            
+            UpperCase()
+
             <div className="layout-row align-items-center justify-content-center my-20 navigation">
                 <label className="form-hint mb-0 text-uppercase font-weight-light">Sort By</label>
                 <button data-testid="most-upvoted-link" className="small">Most Upvoted</button>

@@ -114,7 +114,9 @@ export function AppWithCallbackAfterRender() {
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render(<AppWithCallbackAfterRender />);
+root.render(
+  AppWithCallbackAfterRender()
+);
 
 // https://www.w3schools.com/react/react_conditional_rendering.asp
 // const root = ReactDOM.createRoot(document.getElementById("root"));
