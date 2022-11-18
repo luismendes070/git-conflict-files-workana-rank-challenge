@@ -109,7 +109,7 @@ export function AppWithCallbackAfterRender() {
     console.log('rendered');
   });
 
-  return <App><Articles articles={ordenado}/></App>
+  return Articles({ ordenado });
 }
 
 const container = document.getElementById('root');

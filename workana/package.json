@@ -1,6 +1,6 @@
 {
   "name": "sorting-articles",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.0",
@@ -58,5 +58,8 @@
   },
   "resolutions": {
     "@types/react": "17.0.30"
+  },
+  "compilerOptions": {
+    "moduleResolution": "node"
   }
 }
