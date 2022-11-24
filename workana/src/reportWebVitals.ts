@@ -4,10 +4,14 @@
 
 // https://www.typescriptlang.org/docs/handbook/2/classes.html
 
+import {onLCP, onFID, onCLS} from 'web-vitals';
+
 export public class ReportWebVitals{
 
     public constructor() {
-        
+        onCLS(console.log);
+        onFID(console.log);
+        onLCP(console.log);
     }
 
 

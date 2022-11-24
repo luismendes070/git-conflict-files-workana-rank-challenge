@@ -1,4 +1,7 @@
+// https://webpack.js.org/guides/getting-started/
+
 console.log("\n npm start packagejson main index.ts yarm powershell\n");
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -12,6 +15,17 @@ import AppWithCallbackAfterRender from "./components/AppWithCallbackAfterRender"
 // ReportWebVitals reportWebVitals = new ReportWebVitals();
 
 // reportWebVitals.reportWebVitals(reportWebVitals.sendToAnalytics);
+
+function component() {
+  const element = document.createElement("div");
+
+  // Lodash, currently included via a script, is required for this line to work
+  element.innerHTML = _.join(["Hello", "webpack"], " ");
+
+  return element;
+}
+
+document.body.appendChild(component());
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
