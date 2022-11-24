@@ -1,3 +1,4 @@
+console.log("\n npm start packagejson main index.ts yarm powershell\n");
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
