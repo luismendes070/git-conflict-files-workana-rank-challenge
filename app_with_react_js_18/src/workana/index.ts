@@ -16,7 +16,7 @@ import AppWithCallbackAfterRender from "./components/AppWithCallbackAfterRender"
 
 // reportWebVitals.reportWebVitals(reportWebVitals.sendToAnalytics);
 
-function component() {
+export function component() {
   const element = document.createElement("div");
 
   // Lodash, currently included via a script, is required for this line to work
@@ -25,7 +25,7 @@ function component() {
   return element;
 }
 
-function index() {
+export function index() {
 
   document.body.appendChild(component());
 

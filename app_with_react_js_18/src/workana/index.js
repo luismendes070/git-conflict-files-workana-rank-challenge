@@ -47,10 +47,20 @@ function filterCards() {
             title = title.textContent.toLowerCase();
             console.log(title);
 
+            if ( !title.includes(filterText)) {
+                card.style.display = "none"
+            } else {
+                card.style.display = "block"
+            }
+
 } // end for loop
 
     } else {
         
+        for (let card of cards) { 
+            card.style.display = "block"
+        }
+
     }
 
 } // end function
