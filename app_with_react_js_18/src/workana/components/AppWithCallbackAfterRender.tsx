@@ -32,6 +32,7 @@ export interface ArticlesType{
   title: string;
   upvotes: number;
   date: string;
+  length: number;
 }
 
 const articlesSort = (mostUpvotes: ArticlesType, lessUpvotes: ArticlesType) => {

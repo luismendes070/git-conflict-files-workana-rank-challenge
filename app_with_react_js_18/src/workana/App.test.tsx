@@ -167,11 +167,11 @@ afterEach(() => {
 });
 
 const expectArticles = (
-  articles: ArticlesType,
+  articles: ArticlesType[],
   expectedArticles: ArticlesType
 ) => {
   expect(articles).toHaveLength(expectedArticles.length);
-  articles.forEach((article: ArticlesType, i:number) => {
+  articles.forEach((article: ThisParameterType<typeof ArticlesType[0].id>, i:number) => {
     const title = within(article).getByTestId("article-title").textContent;
     const upvotes = within(article).getByTestId("article-upvotes").textContent;
     const date = within(article).getByTestId("article-date").textContent;
