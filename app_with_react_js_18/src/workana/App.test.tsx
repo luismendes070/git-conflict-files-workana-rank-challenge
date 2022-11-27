@@ -168,20 +168,27 @@ afterEach(() => {
 
 const expectArticles = (
   articles: ArticlesType[],
-  expectedArticles: ArticlesType
+  expectedArticles: ArticlesType[]
 ) => {
   expect(articles).toHaveLength(expectedArticles.length);
-  articles.forEach((article: ThisParameterType<typeof ArticlesType[0].id>, i:number) => {
-    const title = within(article).getByTestId("article-title").textContent;
-    const upvotes = within(article).getByTestId("article-upvotes").textContent;
-    const date = within(article).getByTestId("article-date").textContent;
-    const expectedArticle = expectedArticles[i];
+
+  articles.forEach((article: ThisParameterType<typeof articles[0].id>, i:number) => {
+    
+    const title = within(articles[0].title).getByTestId("article-title").textContent;
+    
+    const upvotes = within(articles[0].upvotes).getByTestId("article-upvotes").textContent;
+  
+    const date = within(articles[0].date).getByTestId("article-date").textContent;
+  
+    const expectedArticle = sortedArticles1tillN[0];  // expectedArticles[i];
+  
     expect([title, upvotes, date]).toEqual([
       expectedArticle.title,
       expectedArticle.upvotes.toString(),
       expectedArticle.date,
     ]);
-  });
+});
+  
 };
 
 test("Initial articles render correctly", () => {

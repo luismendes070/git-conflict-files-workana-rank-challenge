@@ -25,7 +25,7 @@ export function Articles(articles: number) {
                     <tr data-testid="article" key="article-index">
                     <td data-testid="article-title">Article 1 title</td>
                         <td data-testid="article-upvotes">Article 1 title</td>
-                        {Articles.upvotes}
+                        {articles.upvotes}
                     <td data-testid="article-date">Article 1 title</td>
 
                         <td data-testid="most-upvoted-link" key="most-upvoted-link-index"> most-upvoted-link </td>

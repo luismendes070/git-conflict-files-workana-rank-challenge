@@ -2,6 +2,8 @@
 
 console.log("\n npm start packagejson main index.ts yarn powershell\n");
 
+import { _ } from 'lodash';
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -26,6 +28,8 @@ export function component() {
 }
 
 export function index() {
+
+  component();
 
   document.body.appendChild(component());
 

@@ -19,7 +19,7 @@ import AppWithCallbackAfterRender from "./components/AppWithCallbackAfterRender"
 
 // reportWebVitals.reportWebVitals(reportWebVitals.sendToAnalytics);
 
-function component() {
+export function component() {
     const element = document.createElement("div");
 
     const filterElement = document.querySelector('header input');
@@ -36,7 +36,7 @@ function component() {
   return elementArray;
 }
 
-function filterCards() {
+export function filterCards() {
     
     if (filterElement.value !== '') {
         
@@ -66,6 +66,8 @@ function filterCards() {
 } // end function
 
 function index() {
+
+  component();
 
   document.body.appendChild(component()[2]);
 
