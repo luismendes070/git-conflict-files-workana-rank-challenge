@@ -1,5 +1,5 @@
 declare module 'sorting-articles';
-import Articles from './src/components/Articles';
+import Articles from './components/Articles';
 declare module 'react';
 declare module 'react-dom';
 declare module 'xmlhttprequest';
@@ -8,11 +8,11 @@ declare module 'webpack-dev-server';
 declare module 'ajv';
 
  export interface ArticlesType{
-   id:number,
-   title: string;
-   upvotes: number;
-  date: string;
-  length: number;
+   id?:number,
+   title?: string;
+   upvotes?: number;
+   date?: string;
+   length?: number;
  }
 
 // 'ArticlesType' only refers to a type, but is being used as a value here.ts(2693)

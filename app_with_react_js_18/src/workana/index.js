@@ -5,6 +5,8 @@
 
 console.log("\n npm start packagejson main index.ts yarn powershell\n");
 
+import 8 from './declaration.d.ts';
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";

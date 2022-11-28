@@ -16,7 +16,7 @@ const testIds = {
   article: "article",
 };
 
-const articles = [
+const articles:ArticlesType[] = [
   {
     title: "Alphabet earnings",
     upvotes: 22,

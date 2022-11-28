@@ -28,11 +28,11 @@ import registerServiceWorker from '.././registerServiceWorker';
 import {applyPolyfills, defineCustomElements} from 'h8k-components/loader';
 
 export interface ArticlesType{
-  id:number,
-  title: string;
-  upvotes: number;
-  date: string;
-  length: number;
+  id?:number,
+  title?: string;
+  upvotes?: number;
+  date?: string;
+  length?: number;
 }
 
 const articlesSort = (mostUpvotes: ArticlesType, lessUpvotes: ArticlesType) => {
