@@ -1,7 +1,7 @@
 {
   "name": "app_with_react_js_18",
   "description": "web vitals reactJS18",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "private": true,
   "main": "./src/index.tsx",
   "dependencies": {
@@ -13,6 +13,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "logrocket": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
